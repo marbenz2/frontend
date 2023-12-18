@@ -1,17 +1,12 @@
-"use client";
-
 import { useState } from "react";
+import { LinkType } from "@/types/types";
+import Link from "next/link";
 
-type Link = {
-  href: string;
-  text: string;
-};
-
-const links: Link[] = [
+const links: LinkType[] = [
   { href: "/", text: "Home" },
-  { href: "/about", text: "Über uns" },
-  { href: "/press", text: "Presse" },
-  { href: "/youth", text: "Jugendkapelle" },
+  { href: "/pages/about", text: "Über uns" },
+  { href: "/pages/press", text: "Presse" },
+  { href: "/pages/youth", text: "Jugendkapelle" },
 ];
 
 const Navigation = () => {
@@ -19,19 +14,12 @@ const Navigation = () => {
 
   const handleClick = () => {
     setIsOpen(!isOpen);
-
-    const modal = document.getElementById("mobile-menu");
-    const text = document.getElementById("mobile-text");
-    modal?.classList.toggle("w-0");
-    modal?.classList.toggle("w-full");
-    text?.classList.toggle("opacity-0");
-    document.body.classList.toggle("overflow-hidden");
   };
 
   return (
     <>
       <nav className="sticky top-0 z-30 flex flex-col  bg-white shadow-md">
-        <div className="flex justify-between p-4">
+        <section className="flex justify-between p-4">
           <a className="flex flex-col gap-1" href="/">
             <h1 className="text-md w-fit bg-red-400 py-1 pl-2 pr-8 font-bold text-black shadow-md sm:text-xl">
               Musikverein
@@ -69,22 +57,21 @@ const Navigation = () => {
           </div>
           <div className="hidden items-end lg:flex">
             <ul className="flex h-full gap-8">
-              {links.map((link, index) => (
+              {links.map((link) => (
                 <li
-                  key={index}
+                  key={link.href}
                   className="flex h-full items-end justify-center"
                 >
-                  <a
-                    className="h-fit text-xl font-medium text-black transition-all duration-300 ease-in-out hover:text-red-400"
-                    href={link.href}
-                  >
-                    {link.text}
-                  </a>
+                  <Link href={link.href}>
+                    <a className="h-fit text-xl font-medium text-black transition-all duration-300 ease-in-out hover:text-red-400">
+                      {link.text}
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
-        </div>
+        </section>
         <aside className="flex w-full bg-black">
           <p className="mx-auto px-4 py-1 text-sm text-white">
             Und so einfach werden Sie Mitglied im Musikverein Grafenberg:{" "}
@@ -97,23 +84,26 @@ const Navigation = () => {
         </aside>
         <section
           id="mobile-menu"
-          className="absolute left-0 top-0 z-40 h-screen w-0 overflow-hidden bg-white bg-opacity-50 backdrop-blur-md transition-all duration-200 ease-in-out"
+          className={`absolute left-0 top-0 z-40 h-screen overflow-hidden bg-white bg-opacity-50 backdrop-blur-md transition-all duration-200 ease-in-out ${
+            isOpen ? "w-full" : "w-0"
+          }`}
         >
           <ul
             id="mobile-text"
-            className="flex h-full flex-col justify-around py-12 text-center opacity-0 transition-all duration-100 ease-in-out"
+            className={`flex h-full flex-col justify-around py-12 text-center transition-all duration-100 ease-in-out ${
+              isOpen ? "opacity-100" : "opacity-0"
+            }`}
           >
-            {links.map((link, index) => (
+            {links.map((link) => (
               <li
-                key={index}
+                key={link.href}
                 className="flex h-full items-center justify-center"
               >
-                <a
-                  className="h-fit text-2xl transition-all duration-300 ease-in-out hover:text-red-400"
-                  href={link.href}
-                >
-                  {link.text}
-                </a>
+                <Link href={link.href}>
+                  <a className="h-fit text-2xl transition-all duration-300 ease-in-out hover:text-red-400">
+                    {link.text}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>

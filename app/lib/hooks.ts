@@ -12,7 +12,7 @@ export const useFetch = <T>(url: string) => {
       setLoading(true);
       try {
         const res = await axios.get(url);
-        setData(res.data.data);
+        setData(res.data.docs);
       } catch (error: any) {
         setError(error);
       } finally {

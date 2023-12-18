@@ -1,14 +1,17 @@
 type FrameProps = {
-  type: string;
+  className: string;
 };
 
-const Frame = ({ type, children }: React.PropsWithChildren<FrameProps>) => {
+const Frame = ({
+  className,
+  children,
+}: React.PropsWithChildren<FrameProps>) => {
   return (
-    <section
-      className={`mt-12 flex w-full flex-col gap-8 px-2 xl:px-0 ${type}`}
+    <div
+      className={`mt-12 flex w-full flex-col gap-8 px-2 xl:px-0 ${className}`}
     >
-      <section className="flex flex-wrap gap-4">{children}</section>
-    </section>
+      <div className="flex flex-wrap gap-4">{children}</div>
+    </div>
   );
 };
 

@@ -1,3 +1,11 @@
+import { LinkType } from "@/types/types";
+import Link from "next/link";
+
+const links: LinkType[] = [
+  { href: "/pages/impressum", text: "Impressum" },
+  { href: "/pages/datenschutz", text: "Datenschutz" },
+];
+
 const Footer = () => {
   return (
     <footer className="mt-12 grid w-full grid-cols-2 bg-stone-300 p-2">
@@ -7,12 +15,15 @@ const Footer = () => {
       </aside>
       <aside className="self-end justify-self-center">
         <ul className="text-sm">
-          <li>
-            <a href="/impressum">Impressum</a>
-          </li>
-          <li>
-            <a href="/datenschutz">Datenschutz</a>
-          </li>
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link href={link.href}>
+                <a className="transition-all duration-300 ease-in-out hover:text-red-400">
+                  {link.text}
+                </a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </aside>
     </footer>

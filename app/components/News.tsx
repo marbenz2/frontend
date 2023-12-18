@@ -1,17 +1,15 @@
 import { CardBody, CardContainer, CardHeader } from "./Card";
-import { NewsType } from "@/types/types";
+import { Post, User } from "@/types/payload-types";
 
-type key = string;
-
-function News({ data }: { data: NewsType }, key: key) {
+function News({ data }: { data: Post }) {
   return (
-    <CardContainer key={key}>
+    <CardContainer>
       <CardHeader
-        title={data.attributes.title}
-        date={data.attributes.date}
-        authors={data.attributes.authors}
+        titel={data.post.titel}
+        updatedAt={data.updatedAt}
+        autor={data.post.autor as User}
       />
-      <CardBody content={data.attributes.content} />
+      <CardBody content={data.post.content.root.children} />
     </CardContainer>
   );
 }

@@ -1,10 +1,12 @@
-type key = number;
+type ContainerProps = {
+  children: React.ReactNode;
+};
 
-const Container = ({ children }: { children: React.ReactNode }, key: key) => {
+const Container = ({ children }: ContainerProps) => {
   return (
-    <section className="relative flex w-full flex-col 2xl:flex-row-reverse 2xl:gap-8">
+    <div className="relative flex w-full flex-col 2xl:flex-row-reverse 2xl:gap-8">
       {children}
-    </section>
+    </div>
   );
 };
 

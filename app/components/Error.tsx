@@ -1,4 +1,5 @@
 import { ErrorType } from "@/types/types";
+import Link from "next/link";
 
 const Error = ({ error }: { error: ErrorType }) => {
   return (
@@ -7,7 +8,9 @@ const Error = ({ error }: { error: ErrorType }) => {
         {error.message}: {error.code}
       </p>
       <p className="px-2 py-1 text-center">
-        <a href="/">Click here to reload the page.</a>
+        <Link href="/">
+          <a>Click here to reload the page.</a>
+        </Link>
       </p>
     </div>
   );
