@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       <Container>
-        <Frame type={"2xl:w-1/4"}>
+        <Frame className={"2xl:w-1/4"}>
           <Datefeed />
         </Frame>
-        <Frame type={"2xl:w-3/4"}>
+        <Frame className={"2xl:w-3/4"}>
           <Newsfeed />
         </Frame>
       </Container>
