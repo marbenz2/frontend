@@ -23,7 +23,7 @@ export default function RootLayout({
         <main className="relative flex min-h-screen flex-col xl:px-48 2xl:px-72 3xl:px-96 4xl:px-112">
           <Navigation />
           <Header />
-          <div className="flex-1 flex-grow">{children}</div>
+          <section className="flex-1 flex-grow">{children}</section>
           <Footer />
         </main>
       </body>
