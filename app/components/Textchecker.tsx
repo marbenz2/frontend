@@ -6,7 +6,6 @@ type TextCheckerProps = {
 };
 
 const Textchecker = ({ item }: TextCheckerProps) => {
-  console.log(item);
   if (item.type === "heading") {
     if (item.tag === "h1") {
       return <h1 className="text-4xl">{item.children[0].text}</h1>;
