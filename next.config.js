@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "https://mvg-frontend.vercel.app/", // if your website has no www, drop it
+        hostname: "mvg-frontend.vercel.app/", // if your website has no www, drop it
       },
       {
         protocol: "http",
