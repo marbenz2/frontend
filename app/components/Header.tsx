@@ -6,7 +6,7 @@ const Header = () => {
       <Image
         priority
         className="z-0 flex w-full object-cover object-right"
-        src={"/assets/weihnachten.png"}
+        src={"/static/images/weihnachten.png"}
         alt="Frohe Weihnachten!"
         width={1000}
         height={1000}
