@@ -6,7 +6,9 @@ const nextConfig = {
         protocol: "http",
         hostname: "vercel.com",
       },
-      { domain: "https://mvg-frontend-marbenz2.vercel.app/" },
+      {
+        domains: ["https://mvg-frontend-marbenz2.vercel.app/"],
+      },
     ],
   },
 };
