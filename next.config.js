@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["vercel.app"],
+    domains: ["https://mvg-frontend-marbenz2.vercel.app/"],
     remotePatterns: [
       {
         protocol: "http",
