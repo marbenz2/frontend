@@ -6,7 +6,7 @@ type CardContainerProps = {
 };
 
 type CardHeaderProps = {
-  titel?: Post["post"]["titel"] | Date["termin"]["titel"];
+  titel?: Post["post"]["title"] | Date["dates"]["title"];
   updatedAt?: Post["updatedAt"] | Date["updatedAt"];
   autor?: User;
 };

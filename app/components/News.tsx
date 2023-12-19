@@ -5,7 +5,7 @@ function News({ data }: { data: Post }) {
   return (
     <CardContainer>
       <CardHeader
-        titel={data.post.titel}
+        titel={data.post.title}
         updatedAt={data.updatedAt}
         autor={data.post.autor as User}
       />

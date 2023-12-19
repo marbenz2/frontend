@@ -32,8 +32,8 @@ const Datefeed = () => {
               {data
                 .sort(
                   (a, b) =>
-                    new Date(a.termin.datum).getTime() -
-                    new Date(b.termin.datum).getTime(),
+                    new Date(a.dates.datum).getTime() -
+                    new Date(b.dates.datum).getTime(),
                 )
                 .map((date) => (
                   <Dates key={date.id} data={date} />

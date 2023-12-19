@@ -28,10 +28,10 @@ const Dates = ({ data }: { data: Date }) => {
         <table className="text-sm">
           <tbody>
             <tr>
-              <th>{data.termin.datum}</th>
+              <th>{data.dates.datum}</th>
             </tr>
             <tr>
-              <td>{data.termin.titel}</td>
+              <td>{data.dates.title}</td>
             </tr>
           </tbody>
         </table>
@@ -46,30 +46,30 @@ const Dates = ({ data }: { data: Date }) => {
             <tbody>
               <tr className="border-b border-stone-300">
                 <th className="w-1/5">Titel:</th>
-                <td>{data.termin.titel}</td>
+                <td>{data.dates.title}</td>
               </tr>
               <tr className="border-b border-stone-300">
                 <th className="w-1/5">Datum:</th>
-                <td>{data.termin.datum}</td>
+                <td>{data.dates.datum}</td>
               </tr>
-              <tr className="border-b border-stone-300">
+              {/*               <tr className="border-b border-stone-300">
                 <th>Zeit:</th>
                 <td>
-                  {data.termin.startzeit}{" "}
-                  {data.termin.endzeit ? "- " + data.termin.endzeit : ""}
+                  {data.dates.startzeit}{" "}
+                  {data.dates.endzeit ? "- " + data.dates.endzeit : ""}
                 </td>
-              </tr>
-              <tr className="border-b border-stone-300">
+              </tr> */}
+              {/*               <tr className="border-b border-stone-300">
                 <th>Ort:</th>
-                <td>{data.termin.ort}</td>
-              </tr>
-              <tr className="border-b border-stone-300">
+                <td>{data.dates.ort}</td>
+              </tr> */}
+              {/*               <tr className="border-b border-stone-300">
                 <th>Abteilung</th>
-                <td>{data.termin.abteilung}</td>
-              </tr>
+                <td>{data.dates.abteilung}</td>
+              </tr> */}
               <tr>
                 <th>Beschreibung:</th>
-                <td>{data.termin.content}</td>
+                <td>{data.dates.content}</td>
               </tr>
             </tbody>
           </table>
