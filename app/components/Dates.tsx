@@ -2,7 +2,6 @@
 
 import { useState, useRef } from "react";
 import { Date } from "@/types/payload-types";
-import { CardBody, CardContainer, CardHeader } from "./Card";
 
 const Dates = ({ data }: { data: Date }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +27,7 @@ const Dates = ({ data }: { data: Date }) => {
         <table className="text-sm">
           <tbody>
             <tr>
-              <th>{data.dates.datum}</th>
+              <th>{data.dates.date}</th>
             </tr>
             <tr>
               <td>{data.dates.title}</td>
@@ -50,23 +49,23 @@ const Dates = ({ data }: { data: Date }) => {
               </tr>
               <tr className="border-b border-stone-300">
                 <th className="w-1/5">Datum:</th>
-                <td>{data.dates.datum}</td>
+                <td>{data.dates.date}</td>
               </tr>
-              {/*               <tr className="border-b border-stone-300">
+              <tr className="border-b border-stone-300">
                 <th>Zeit:</th>
                 <td>
-                  {data.dates.startzeit}{" "}
-                  {data.dates.endzeit ? "- " + data.dates.endzeit : ""}
+                  {data.dates.timeStart}{" "}
+                  {data.dates.timeEnd ? "- " + data.dates.timeEnd : ""}
                 </td>
-              </tr> */}
-              {/*               <tr className="border-b border-stone-300">
+              </tr>
+              <tr className="border-b border-stone-300">
                 <th>Ort:</th>
-                <td>{data.dates.ort}</td>
-              </tr> */}
-              {/*               <tr className="border-b border-stone-300">
+                <td>{data.dates.location}</td>
+              </tr>
+              <tr className="border-b border-stone-300">
                 <th>Abteilung</th>
-                <td>{data.dates.abteilung}</td>
-              </tr> */}
+                <td>{data.dates.department}</td>
+              </tr>
               <tr>
                 <th>Beschreibung:</th>
                 <td>{data.dates.content}</td>
