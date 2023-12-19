@@ -10,10 +10,10 @@ export interface Config {
   collections: {
     users: User;
     posts: Post;
+    datenschutz: Datenschutz;
+    impressum: Impressum;
     dates: Date;
     media: Media;
-    impressum: Impressum;
-    datenschutz: Datenschutz;
     "payload-preferences": PayloadPreference;
     "payload-migrations": PayloadMigration;
   };
@@ -38,7 +38,7 @@ export interface User {
 export interface Post {
   id: string;
   post: {
-    titel: string;
+    title: string;
     autor: string | User;
     datum: string;
     content: {
@@ -59,22 +59,67 @@ export interface Post {
   };
   updatedAt: string;
   createdAt: string;
-  _status?: ("draft" | "published") | null;
+}
+export interface Datenschutz {
+  id: string;
+  datenschutz: {
+    title: string;
+    autor: string | User;
+    datum: string;
+    content: {
+      root: {
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        indent: number;
+        type: string;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+export interface Impressum {
+  id: string;
+  impressum: {
+    title: string;
+    autor: string | User;
+    datum: string;
+    content: {
+      root: {
+        children: {
+          type: string;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ("ltr" | "rtl") | null;
+        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
+        indent: number;
+        type: string;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+  };
+  updatedAt: string;
+  createdAt: string;
 }
 export interface Date {
   id: string;
-  termin: {
-    titel: string;
+  dates: {
+    title: string;
+    autor: string | User;
     datum: string;
-    startzeit?: string | null;
-    endzeit?: string | null;
-    abteilung?: string | null;
-    ort: string;
     content: string;
   };
   updatedAt: string;
   createdAt: string;
-  _status?: ("draft" | "published") | null;
 }
 export interface Media {
   id: string;
@@ -87,58 +132,6 @@ export interface Media {
   filesize?: number | null;
   width?: number | null;
   height?: number | null;
-}
-export interface Impressum {
-  id: string;
-  impressum: {
-    titel: string;
-    datum: string;
-    content: {
-      root: {
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-        indent: number;
-        type: string;
-        version: number;
-      };
-      [k: string]: unknown;
-    };
-    autor: string | User;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ("draft" | "published") | null;
-}
-export interface Datenschutz {
-  id: string;
-  datenschutz: {
-    titel: string;
-    datum: string;
-    content: {
-      root: {
-        children: {
-          type: string;
-          version: number;
-          [k: string]: unknown;
-        }[];
-        direction: ("ltr" | "rtl") | null;
-        format: "left" | "start" | "center" | "right" | "end" | "justify" | "";
-        indent: number;
-        type: string;
-        version: number;
-      };
-      [k: string]: unknown;
-    };
-    autor: string | User;
-  };
-  updatedAt: string;
-  createdAt: string;
-  _status?: ("draft" | "published") | null;
 }
 export interface PayloadPreference {
   id: string;
