@@ -1,4 +1,5 @@
 import Image from "next/image";
+import banner from "../../public/images/Weihnachten.png";
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
         placeholder="blur"
         priority
         className="z-0 flex w-full object-cover object-right"
-        src={"/weihnachten.png"}
+        src={banner}
         alt="Frohe Weihnachten!"
         width={1000}
         height={1000}
