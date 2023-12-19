@@ -34,7 +34,7 @@ export default function Home() {
         ) : (
           <CardContainer>
             <CardHeader
-              titel={data[0].impressum.titel}
+              titel={data[0].impressum.title}
               updatedAt={data[0].updatedAt}
               autor={data[0].impressum.autor as User}
             />

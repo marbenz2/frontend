@@ -32,7 +32,7 @@ export default function Home() {
         ) : (
           <CardContainer>
             <CardHeader
-              titel={data[0].datenschutz.titel}
+              titel={data[0].datenschutz.title}
               updatedAt={data[0].updatedAt}
               autor={data[0].datenschutz.autor as User}
             />
