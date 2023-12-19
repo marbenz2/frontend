@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { LinkType } from "@/types/types";
 import Link from "next/link";
