@@ -4,8 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "vercel.com",
       },
+      { domain: "https://mvg-frontend-marbenz2.vercel.app/" },
     ],
   },
 };
